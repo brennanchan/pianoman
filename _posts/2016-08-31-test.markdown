@@ -20,4 +20,4 @@ Here are 3 things:
 
 This is a test.
 
-![Hello World](https://github.com/brennanchan/pianoman/blob/master/assets/Steinway_and_Sons_Piano_Studio.jpg)
+![Hello World]({{ site.github.url }}/assets/Steinway_and_Sons_Piano_Studio.jpg)
