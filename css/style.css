@@ -125,6 +125,10 @@ input, textarea {
   text-decoration: none;
 }
 
+.overlay-button a:active {
+	top: 2px;
+}
+
 .opt-in {
   background-color: #e6e6e6;
   padding: 20px;
