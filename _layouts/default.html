@@ -25,6 +25,11 @@
       $('#footer-col-right').removeClass('footer-col-right');
       $('#footer-col-left, #footer-col-right').addClass('full-footer');
     }
+    // Make foot sticky
+    var minHeight = $( window ).height() - $('#foot').outerHeight(true);
+    $('#everything-but-foot').css('min-height', minHeight + 'px');
+    console.log($('#foot').outerHeight(true));
+    console.log(minHeight);
   });
   $(window).on('resize', function() {
     var windowWidth = $(window).width();
@@ -38,69 +43,81 @@
       $('#footer-col-left').addClass('footer-col-left');
       $('#footer-col-right').addClass('footer-col-right');
     }
+    // Make foot sticky
+    var minHeight = $( window ).height() - $('#foot').outerHeight(true);
+    $('#everything-but-foot').css('min-height', minHeight + 'px');
+    console.log($('#foot').outerHeight(true));
+    console.log(minHeight);
   });
 </script>
 
 <body>
 
-  <nav class="navbar {% if page.title %}navbar-default{% else %}navbar-inverse{% endif %}">
-    <div class="content">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{{ site.github.url }}/index">{{ site.title }}</a>
+  <div id="everything">
+
+    <div id="everything-but-foot">
+
+      <nav class="navbar {% if page.title %}navbar-default{% else %}navbar-inverse{% endif %}">
+        <div class="content">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="{{ site.github.url }}/index">{{ site.title }}</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li {% if page.title == "about" %}class="active"{% endif %}><a href="{{ site.github.url }}/about">About</a></li>
+                <li {% if page.title == "services" %}class="active"{% endif %}><a href="{{ site.github.url }}/services">Services</a></li>
+                <li {% if page.title == "contact" %}class="active"{% endif %}><a href="{{ site.github.url }}/contact">Contact</a></li>
+                <li {% if page.title == "posts" %}class="active"{% endif %}><a href="{{ site.github.url }}/posts">Posts</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
         </div>
+      </nav>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li {% if page.title == "about" %}class="active"{% endif %}><a href="{{ site.github.url }}/about">About</a></li>
-            <li {% if page.title == "services" %}class="active"{% endif %}><a href="{{ site.github.url }}/services">Services</a></li>
-            <li {% if page.title == "contact" %}class="active"{% endif %}><a href="{{ site.github.url }}/contact">Contact</a></li>
-            <li {% if page.title == "posts" %}class="active"{% endif %}><a href="{{ site.github.url }}/posts">Posts</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </div>
-  </nav>
-
-  {% if page.title %}
-    <div class="content">
-      <div class="text-center">
-        <h1 class="page-title">{{ page.title|capitalize }}</h1>
-      </div>
-    </div>
-  {% endif %}
-
-  {{ content }}
-
-  <footer class="site-footer">
-
-    <div class="content">
-
-      <h2 class="footer-heading topless">{{ site.title }}</h2>
-      <hr style="color:white;">
-
-      <div class="footer-table">
-        <div class="footer-col-wrapper">
-          <div id="footer-col-left" class="footer-col-left">
-            <p>Kitsilano and North Vancouver</p>
-            <p>604-910-2880</p>
-          </div>
-
-          <div id="footer-col-right" class="footer-col-right">
-            {{ site.description }}
+      {% if page.title %}
+        <div class="content">
+          <div class="text-center">
+            <h1 class="page-title">{{ page.title|capitalize }}</h1>
           </div>
         </div>
-      </div>
+      {% endif %}
+
+      {{ content }}
+
     </div>
 
-  </footer>
+    <footer id="foot" class="site-footer">
+
+      <div class="content">
+
+        <h2 class="footer-heading topless">{{ site.title }}</h2>
+        <hr style="color:white;">
+
+        <div class="footer-table">
+          <div class="footer-col-wrapper">
+            <div id="footer-col-left" class="footer-col-left">
+              <p>Kitsilano and North Vancouver</p>
+              <p>604-910-2880</p>
+            </div>
+
+            <div id="footer-col-right" class="footer-col-right">
+              {{ site.description }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+  </div>
 
 </body>
