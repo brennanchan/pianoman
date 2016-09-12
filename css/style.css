@@ -120,7 +120,9 @@ input, textarea {
 
 .overlay-button.services:hover, .overlay-button.services:active {
   background-color: white;
+  border: 2px solid white;
   color:black;
+  text-shadow: none;
   text-decoration: none;
 }
 
