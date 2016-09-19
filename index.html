@@ -52,8 +52,8 @@ permalink: /index
 <img id="front-image" src="assets/grand_piano_performance1.jpg" width="100%">
 
 <div>
-<div style="padding: 40px; background-color:#333333;">
-  <div class="content">
+<div style="background-color:#333333;">
+  <div class="content" style="padding-top:20px;padding-bottom:20px;">
     <p style="font-size: 20px; color: white;"><b style="font-size:inherit;">Brennan Chan</b> is the only piano teacher in the Lower Mainland who teaches students of all ages to love playing music at their best through a unique 5-Step System integrating motor skill development and performance psychology.</p>
   </div>
 
@@ -73,10 +73,10 @@ permalink: /index
     and experience our 5-Step System to creating music you love and performing at your best!
     <form action="https://formspree.io/{{ site.email }}"
         method="POST">
-        <div class="left-half" style="padding-left:0">
+        <div class="left-half" style="padding-left:0;padding-right:5px;">
           <input type="text" name="name" placeholder="Name">
         </div>
-        <div class="right-half" style="padding-right:0">
+        <div class="right-half" style="padding-left:5px;padding-right:0">
           <input type="email" name="email" placeholder="Email">
         </div>
       <br>
@@ -96,27 +96,3 @@ permalink: /index
         <p>{{ post.excerpt }}</p>
     {% endfor %}
 </div>
-
-
-
-<!-- <div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <img src="assets/piano.jpg" width="100%">
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div> -->
